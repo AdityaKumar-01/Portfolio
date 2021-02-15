@@ -31,6 +31,18 @@ html, body{
   background: #555;
 }
 
+.page-loader{
+  z-index:1000;
+  position:fixed;
+  width:100%;
+  height: 100vh;
+  background-color: white;
+}
+.page-loader h2{
+  position: absolute;
+  left:45%;
+  top:40%;
+}
 /* ================================================================= */
 /* BODY LEVEL EDITING */
 /* ================================================================= */
@@ -47,7 +59,7 @@ html, body{
 /* ================================================================= */
 
 .navbar{
-    float: left;
+    
     min-width:7%;
     max-width: 7%;
     background-color:#1A1A1D;
@@ -362,6 +374,7 @@ html, body{
   justify-content:space-around
 }
 
+
 .social-media-handles a ion-icon{
   font-size:35px;
   color:white;
@@ -373,8 +386,15 @@ html, body{
   color:#00B87B;
   transition: color 0.5s;
 }
-
-/* ================================================================= */
+.handles{
+   width:100%;
+  display: flex;
+  justify-content:space-around
+}
+.res-img{
+  display: none;
+}
+/*============================================================= */
 /* MEDIA QUERY */
 /* ================================================================= */
 
@@ -383,7 +403,7 @@ html, body{
     margin-top:5%; 
     padding-top:5%;
     height:60vh;
-}
+  }
 
 }
 
@@ -391,6 +411,236 @@ html, body{
 @media only screen and (max-width:1300px){
   .navbar{
     padding-top:2%;
+    min-width:7%;
+    max-width: 7%;
+    margin: 5% 0;
+  }
+
 }
 
+@media only screen and (max-width:1040px){
+  
+.navbar{
+    min-width:9%;
+    max-width: 7%;
+    padding-top:5%;
+    margin:6% 0%;
+  }
+
+  /* Place the timelime to the left */
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 11px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+  .right::before{
+    border-color: transparent #00B87B transparent transparent;
+  }
+
+  .edu::after{
+    visibility: hidden;
+  }
+
+  .project-row{
+    flex-direction: column;
+    padding-bottom:10px;
+  }
+
+  .project-row:nth-child(2){
+    flex-direction:column-reverse;
+  }
+}
+
+@media only screen and (max-width:900px){
+
+  .card{
+    margin-left:5%;
+    width:80%;
+}
+.card:nth-child(even){
+  background-color:#00B87B;
+  color: #1a1a1a;
+}
+.card:nth-child(odd){
+  color:white;
+  background-color:#474747;
+}
+}
+@media only screen and (max-width:800px){
+
+  .panel-header{
+    font-family: 'Poppins', sans-serif;
+    font-weight:200;
+    font-size: 40px;
+    padding: 0 4%;
+    color:white;
+  }
+
+  .image-container img{
+    height:80vh;
+  }
+
+  .panel{
+    margin:25% 0;
+  }
+
+  .navbar{
+    min-width:10%;
+    margin-top:18%; 
+    padding-top:5%;
+    height:50vh;
+  }
+
+  .contact-penel{
+    height:100vh;
+  }
+}
+
+@media only screen and (max-width:750px){
+
+  .body-wrapper{
+    flex-direction: column;
+  }
+
+  .navbar{
+    min-width:100%;
+    display: flex;
+    flex-direction:column;
+    margin-top:0%; 
+    padding-top:0%;
+    height:30vh;
+  }
+
+  .navbar ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top:1%;
+  }
+
+  .navbar ul li{
+    margin: 20px
+  }
+
+  .navbar ul li ion-icon{
+    font-size: 40px;
+  }
+  .navbar{
+    border-radius:25px 25px 0 0 ;
+  }
+  .image-container{
+    display:none
+  }
+
+  .handles{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .res-img{
+    display:inline;
+  }
+
+  .res-img img{
+     height:350px;
+    width:200px;
+  }
+
+  .panel{
+    margin:0;
+    height: 75vh;
+  }
+ 
+  .paragraph{
+    margin:5%;
+  }
+
+  .contact-panel{
+    height:80vh;
+  }
+
+  .skill-row span{
+  margin: 5px;
+  margin-left:2%;
+  height:50%;
+  width:40%;
+  color:#00B87B;
+  height:50%;
+  background-color:rgb(46, 46, 46);
+}
+}
+
+@media only screen and (max-width:500px){
+  
+  .navbar ul li ion-icon{
+    font-size: 25px;
+  }
+
+  .skill-row{
+    margin-left: 1%;
+  }
+  .skill-row span{
+  margin-left:10px;
+}
+
+}
+
+@media only screen and (max-width:450px){
+  
+  .navbar{
+    border-radius: 10px 10px 0 0 ;
+  }
+  .navbar ul{
+        height:10vh;
+  }
+  .navbar ul li ion-icon{
+    padding:5%;
+    font-size: 25px;
+  }
+  .navbar ul li{
+
+    margin: 0px;
+  }
+  .panel{
+    border-radius:0 0 10px 10px
+  }
+}
+
+@media only screen and (max-width:400px){
+
+  .panel-header{
+    
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width:360px){
+  .panel-header{
+    font-size:30px
+  }
 }

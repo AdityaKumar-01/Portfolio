@@ -7,8 +7,23 @@ current = ".skill";
 previous= ".about";
 const changeIcon = (previousIcon, currentIcon) =>{
     
-    $(previousIcon).css({"padding-left":"23px","color":'white',"font-size":"22px","transition":"padding,font-size 0.5s"});
-    $(currentIcon).css({"padding-left":"15px","color":'#00B87B',"font-size":"40px","transition":"padding 0.3s ,font-size 0.1s"});
+    if (window.matchMedia('(max-width: 500px)').matches) {
+        
+        $(previousIcon).css({"color":'white',"font-size":"25px","transition":"padding,font-size 0.5s"});
+        $(currentIcon).css({"color":'#00B87B',"font-size":"40px","transition":"padding 0.5s ,font-size 0.3s"});
+    }
+    else if (window.matchMedia('(max-width: 750px)').matches) {
+        
+        $(previousIcon).css({"color":'white',"font-size":"40px","transition":"padding,font-size 0.5s"});
+        $(currentIcon).css({"color":'#00B87B',"font-size":"60px","transition":"padding 0.5s ,font-size 0.3s"});
+    }
+    
+    else{
+        $(previousIcon).css({"color":'white',"font-size":"22px","transition":"padding,font-size 0.5s"});
+        $(currentIcon).css({"color":'#00B87B',"font-size":"40px","transition":"padding 0.5s ,font-size 0.3s"});
+
+    }
+    
 }
 
 const panelHandler = (previousPanel, currentPanel) => {
